@@ -1,4 +1,5 @@
 import Providers from "./providers";
+import Link from "next/link"
 
 export const metadata = {
   title: "Create Next App",
@@ -9,7 +10,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <nav style={{ padding: "5px 0" }}>
+            <Link href="/">Home</Link>
+            {` `}
+            <Link href="/admin-dashboard">Admin dashboard</Link>
+            {` `}
+            <Link href="/profile-page">Profile</Link>
+            {` `}
+          </nav>
+          {children}
+        </Providers>
       </body>
     </html>
   );
